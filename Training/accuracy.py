@@ -3,7 +3,7 @@ Created on Feb 9, 2017
 
 @author: חנן ליפסקין
 '''
-import training_classifier
+import classifier
 import csv, json
 import os
 from watson_developer_cloud import NaturalLanguageClassifierV1
@@ -36,7 +36,7 @@ file_name = '../csv_files/2ls_ownDB.csv'
 
 # class a sentence with the classifier classifier_name
 def classify(classifier_name, sentence):
-    classifiers = training_classifier.list_classifiers_name_id()
+    classifiers = classifier.list_classifiers_name_id()
     
     # API CALL 
     natural_language_classifier = NaturalLanguageClassifierV1(
@@ -57,6 +57,11 @@ def classify(classifier_name, sentence):
 def accuracy(testing_file, classifier_name):
     #print(file_name)
     #print(str(classifier_name).upper())
+    train = True
+    status = classifier.get_status(classifier_name)
+    while status != 'Available':
+        status = classifier.get_status(classifier_name)
+        
     with open(testing_file) as csvfile:
             n_row = 0
             counter = 0
@@ -83,11 +88,11 @@ def accuracy(testing_file, classifier_name):
 #give the accuracies of all the classifiers for the testing_file
 #return a dictionnary with the classifier and his accuracy
 def test(testing_file):
-    classifiers = training_classifier.list_classifiers_name_id()
+    classifiers = classifier.list_classifiers_name_id()
     accuracies = list()
     data = dict()
     for classifier_name in classifiers:
-        print(str(classifier_name).upper())
+        print(str(classifier_name))
         accur = accuracy(testing_file, classifier_name)
         accuracies.append(accur)
         data[classifier_name] = accur
