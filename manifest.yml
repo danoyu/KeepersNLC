@@ -1,0 +1,7 @@
+applications:
+  -memory: 128M
+  instances: 1
+  domain: eu-gb.mybluemix.net
+  name: python test classifier
+  random-route: true
+
