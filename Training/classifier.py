@@ -26,8 +26,8 @@ import os
 #nlc_usr = '96e6ee96-1661-4aae-9956-c07db9eef464'
 #nlc_psw = 'v2nb6hPx87JH'
 
-nlc_usr = '5567e74f-8ed1-4427-810b-de1211d63b5e'
-nlc_psw = 'GgcTiEDqydS7'
+nlc_usr = '96e6ee96-1661-4aae-9956-c07db9eef464'
+nlc_psw = 'v2nb6hPx87JH'
 
 file = "training_set.csv"
 nameDir = '../training_csv_files/'
