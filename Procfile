@@ -1,1 +1,1 @@
-web: python Training/oneClick.py
+web: python Training/hello.py
