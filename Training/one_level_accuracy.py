@@ -1,7 +1,7 @@
 '''
 Created on Feb 9, 2017
 
-@author: חנן ליפסקין
+@author: Dan
 '''
 import classifier
 import csv, json

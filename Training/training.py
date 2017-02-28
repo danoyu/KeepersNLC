@@ -1,17 +1,15 @@
 '''
 Created on Feb 7, 2017
 
-@author: חנן ליפסקין
+@author:Dan
 '''
-
+# -*- coding: utf-8 -*-
 
 import csv
 import linecache
 import random
 from mpmath import rand
 import os
-from argcomplete.compat import str
-
 
 
 file = "../csv_files/ownDB_good_level_of_bad.csv"
@@ -136,6 +134,7 @@ def select_training_sentences_balance_good_bad(file, p):
     return set
     
 # print (select_training_sentences_balance_good_bad('../csv_files/ownDB_good_level_of_bad_BAD.csv',0.5))
+#print (select_training_sentences_balance_good_bad('../csv_files/test.csv',0.5))
 
 # create a csv file with the rows that selected by select_training_sentences_balance_good_bad(source,p)
 def create_training_file_balance_good_bad(source, p, target_file):

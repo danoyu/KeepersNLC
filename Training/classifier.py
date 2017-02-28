@@ -1,7 +1,7 @@
 '''
 Created on Feb 8, 2017
 
-@author: חנן ליפסקין
+@author: Dan 
 '''
 
 #===============================================================================
@@ -57,10 +57,10 @@ def create_classifier(training_file, name, nb = None):
     #print('creating time : ' + str(t))
     status = get_status(name)
     t = time.clock()
-    #while status != 'Available':
-    #    status = get_status(name)
-    #t = time.clock() - t
-    #print('traning time : ' + str(t))
+    while status != 'Available':
+        status = get_status(name)
+    t = time.clock() - t
+    print('traning time : ' + str(t))
     return classifier
 #===============================================================================
 
@@ -126,6 +126,8 @@ def create_list_classifiers(filename):
             nb = nb[len(nb) - 1]
             nb = nb.split('.')[0]
             name_classifier = file.split('.csv')[0] + '_classifier_' + nb
+            #print(list_classifiers_name_id())
+            #print(len(list_classifiers_name_id()))
             create_classifier('../training_csv_files/' + file, name_classifier,nb)
           
 

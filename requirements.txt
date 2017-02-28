@@ -1,2 +1,6 @@
-Flask
+ipython[notebook]
+numpy
+pandas
+matplotlib
 watson_developer_cloud
+mpmath
